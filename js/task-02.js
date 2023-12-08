@@ -29,8 +29,8 @@ function onMarkupGall() {
   let markup = ``;
   for (let i = 0; i < images.length; i++) {
     markup += `
-  <li class="list">
-  <img src="${images[i].url}" alt="${images[i].alt} >
+  <li class="gallary-element">
+  <img src="${images[i].url}" alt="${images[i].alt}" >
   </li>`;
   }
 
