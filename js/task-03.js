@@ -5,7 +5,5 @@ inputName.addEventListener("input", onSearchInput);
 function onSearchInput(e) {
   const value = e.target.value.trim();
   title.textContent = value;
-  if (value === "") {
-    title.textContent = " Anonymous";
-  }
+  title.textContent = value === "" ? "Anonymous" : value;
 }

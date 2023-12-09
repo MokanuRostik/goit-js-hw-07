@@ -3,12 +3,13 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-const desk = document.querySelector("p> .color");
+const colorSpan = document.querySelector("p> .color");
 
 const btn = document.querySelector(".change-color");
 btn.addEventListener("click", onRandomColor);
 function onRandomColor() {
   const body = document.body;
-  body.style.backgroundColor = getRandomHexColor();
-  desk.textContent = getRandomHexColor();
+  const randomColor = getRandomHexColor(); // Зберігаємо колір для забезпечення послідовності
+  body.style.backgroundColor = randomColor;
+  colorSpan.textContent = randomColor;
 }

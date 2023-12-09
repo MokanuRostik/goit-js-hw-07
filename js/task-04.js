@@ -1,25 +1,17 @@
 const form = document.querySelector(".login-form");
-const inputs = document.querySelectorAll("input");
+const inputs = form.elements; // Використовуємо властивість elements для отримання всіх елементів форми
 
 form.addEventListener("submit", onSubmitForm);
+
 function onSubmitForm(e) {
   e.preventDefault();
-  let allFieldsFilled = true;
 
-  inputs.forEach((input) => {
-    if (input.value.trim() === "") {
-      allFieldsFilled = false;
-    }
-  });
+  const formData = {
+    email: e.target.elements.email.value.trim(), // Зберігаємо обрізане значення поля email
+    password: e.target.elements.password.value.trim(), // Зберігаємо обрізане значення поля password
+  };
 
-  if (!allFieldsFilled) {
-    alert("All form fields must be filled in");
-  }
-  const forms = e.target;
-  const login = forms.elements.email.value;
+  console.log(formData); // Виводимо об'єкт з правильною структурою даних в консоль
 
-  const password = forms.elements.password.value;
-  const objectDate = [{ email: login, password: password }];
-  console.log(objectDate);
-  forms.reset();
+  form.reset();
 }

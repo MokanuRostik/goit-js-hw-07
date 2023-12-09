@@ -41,3 +41,4 @@ function destroyBoxes() {
 
 btnCreate.addEventListener("click", createBoxes);
 btnDestroy.addEventListener("click", destroyBoxes);
+

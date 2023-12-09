@@ -24,16 +24,15 @@ const images = [
     alt: "Zebras on Zebra",
   },
 ];
-function onMarkupGall() {
+function createGalleryMarkup() {
   const gallery = document.querySelector(".gallery");
-  let markup = ``;
-  for (let i = 0; i < images.length; i++) {
-    markup += `
-  <li class="gallary-element">
-  <img src="${images[i].url}" alt="${images[i].alt}" >
-  </li>`;
+  let markup = "";
+  for (const image of images) {
+    markup += `<li class="gallary-item">
+   <img src="${image.url}" alt="${image.alt}" class="gallery-image" >
+ </li>`;
   }
 
   gallery.insertAdjacentHTML("afterbegin", markup);
 }
-onMarkupGall();
+createGalleryMarkup();
